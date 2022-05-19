@@ -24,6 +24,10 @@ function Counter() {
     document.title = count;
   });
 
+  useEffect(()=> {
+    document.body.style.backgroundColor = color;
+  }, [color])
+
   useEffect(() => {
     setColor(generateRandomColor());
   }, [count]);
@@ -34,7 +38,7 @@ function Counter() {
         Click Me to Increase The Count and Generate a HEX Color
       </button>
       <h1>{count}</h1>
-      <h2 style={{ color: color }}>
+      <h2>
         {" "}
         <strong>{color}</strong>{" "}
       </h2>
